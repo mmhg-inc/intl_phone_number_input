@@ -344,7 +344,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
       this.country = country;
     });
     if (widget.onCountryChanged != null) {
-      widget.onCountryChanged(country);
+      widget.onCountryChanged!(country!);
     }
     phoneNumberControllerListener();
   }
