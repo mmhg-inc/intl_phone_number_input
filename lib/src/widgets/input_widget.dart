@@ -40,6 +40,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
 
   final ValueChanged<PhoneNumber>? onInputChanged;
   final ValueChanged<bool>? onInputValidated;
+  final ValueChanged<Country>? onCountryChanged;
 
   final VoidCallback? onSubmit;
   final ValueChanged<String>? onFieldSubmitted;
@@ -91,6 +92,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.selectorConfig = const SelectorConfig(),
       required this.onInputChanged,
       this.onInputValidated,
+      this.onCountryChanged,
       this.onSubmit,
       this.onFieldSubmitted,
       this.validator,
@@ -319,7 +321,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
   /// Also updates [selectorButtonBottomPadding]
   String? validator(String? value) {
     bool isValid =
-        this.isNotValid && (value!.isNotEmpty || widget.ignoreBlank == false);
+        this.isNotValid && (widget.ignoreBlank == false);
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
       if (isValid && widget.errorMessage != null) {
         setState(() {
@@ -341,6 +343,9 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
     setState(() {
       this.country = country;
     });
+    if (widget.onCountryChanged != null) {
+      widget.onCountryChanged(country);
+    }
     phoneNumberControllerListener();
   }
 
