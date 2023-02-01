@@ -139,7 +139,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
 
   Country? country;
   List<Country> countries = [];
-  bool isNotValid = true;
+  bool isNotValid = false;
 
   @override
   void initState() {
