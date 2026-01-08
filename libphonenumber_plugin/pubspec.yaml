@@ -18,7 +18,7 @@ dependencies:
     git:
       url: https://github.com/mmhg-inc/intl_phone_number_input.git
       path: libphonenumber_platform_interface
-      ref: swift-6-fix
+      ref: updated_deps
 
 dev_dependencies:
   flutter_test:

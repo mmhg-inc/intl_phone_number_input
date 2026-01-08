@@ -15,7 +15,7 @@ dependencies:
     git:
       url: https://github.com/mmhg-inc/intl_phone_number_input.git
       path: libphonenumber_plugin
-      ref: swift-6-fix
+      ref: updated_deps
     
   equatable: ^2.0.3
   collection: ^1.15.0
